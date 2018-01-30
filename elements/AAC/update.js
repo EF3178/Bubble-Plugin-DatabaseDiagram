@@ -2,10 +2,9 @@ function(instance, properties, context) {
   var uniqueid = instance.data.uniqueid
   var el = instance.canvas.find('#'+uniqueid)[0]
   var div = $(el)
-  var appname = properties.appname
-  var domain = (properties.domain === 'Bubble')?'bubbleapps.io': properties.domain
+  var domainName = properties.domain_name
   var version = (properties.version === 'Development')? 'version-test/':''
-  var metaurl = 'https://'+appname+'.'+domain+'/'+version+'api/1.1/meta'
+  var metaurl = 'https://'+domainName+'/'+version+'api/1.1/meta'
   var request = $.get(metaurl)
   var diagram = "";
   request.done(function(result) {
@@ -68,13 +67,11 @@ function(instance, properties, context) {
   else {
       direction = 'rl'
   }
-  console.log(direction) 
-    console.log(properties.direction)
+
     
   var diagram = tbl+rel
   var imgSrc = 'https://yuml.me/airdbdiagram/diagram/'+properties.style+';dir:'+direction+';scale:'+properties.scale+'/class/'+diagram
-  console.log(diagram)
-      var imgtag = '<p style="padding-top: 2em; position: relative;"><img style="max-height: 100%; max-width: 100%" src="'+imgSrc+'" /></p>';
+   var imgtag = '<p style="padding-top: 2em; position: relative;"><img style="max-height: 100%; max-width: 100%" src="'+imgSrc+'" /></p>';
     
  $(el).append(imgtag)
     //instance.publishState('value',imgSrc)
@@ -86,8 +83,11 @@ request.fail(function(jqXHR, textStatus, errorThrown) {
   if (textStatus == 'timeout')
     console.log('The server is not responding');
 
-  if (textStatus == 'error')
-    console.log('Error: ' + errorThrown);
+  if (textStatus == 'error'){
+    alert('Hmm something went wrong accessing your application metadata at : www.'+properties.domain_name)
+     console.log('Error: ' + errorThrown);
+  }
+   
 });
 
 function isListField(str){
@@ -108,19 +108,5 @@ function getType(str){
   else return str
 }
 
-
-  
-  /*
-<img style="max-height: 100%; max-width: 100%" src="https://yuml.me/seanhoots/diagram/scruffy/class/[Inquiry|image : image; prescription name : text; ⚷ reponders : pharmacy *; status : text; Created Date : date; Modified Date : date; Created By : user; unique ID : text; ],[Pharmacy|address line1 : text; address line2 : text; city : text; contact person : text; digital address : text; license : text; location : geographic_address; otp : text; pharmacist code : text; pharmacist name : text; phone : text; shop name : text; tin : text; verified : boolean; Created Date : date; Modified Date : date; Created By : user; unique ID : text; ],[User|admin? : boolean; digital_address : text; fname : text; location : geographic_address; otp : text; phone : text; player id : text; role : text; surname : text; Created Date : date; Modified Date : date; unique ID : text; ],[Inquiry]<>-reponders>*[pharmacy]," />
-*/  
-  
-/*
-Scaling to 75% size	https://yuml.me/diagram/scale:75/class/[Customer]+->[Order]
-Scruffy with scaling to 125% size	https://yuml.me/diagram/scruffy;scale:125/class/[Customer]+->[Order]
-Direction: Force Left-Right	https://yuml.me/diagram/dir:lr/class/[Customer]+->[Order]
-Direction: Force Top-Down	https://yuml.me/diagram/dir:td/class/[Customer]+->[Order]
-Jpeg Images: Get Jpeg images rather than PNG	https://yuml.me/diagram/class/[Customer]+->[Order].jpg
-PDF: Get PDF files rather than PNG images	https://yuml.me/diagram/class/[Customer]+->[Order].pdf
-*/
 
 }

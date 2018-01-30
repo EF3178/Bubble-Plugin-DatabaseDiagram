@@ -8,20 +8,11 @@
     "display": "AirDatabaseDiagram",
     "fields": {
         "AAG": {
-            "caption": "Appname",
-            "doc": "Name of the app",
+            "caption": "Domain name ",
+            "doc": "Your application domain",
             "editor": "StaticText",
-            "name": "appname",
-            "rank": 0
-        },
-        "AAH": {
-            "caption": "Domain",
-            "default_val": "Bubble",
-            "doc": "Domain name for your app",
-            "editor": "Dropdown",
-            "name": "domain",
-            "options": "Bubble,Custom Domain",
-            "rank": 1
+            "name": "domain_name",
+            "rank": 2
         },
         "AAI": {
             "caption": "Version",
@@ -30,7 +21,7 @@
             "editor": "Dropdown",
             "name": "version",
             "options": "Development,Live",
-            "rank": 2
+            "rank": 0
         },
         "AAK": {
             "caption": "Color tables",
@@ -64,6 +55,12 @@
             "name": "style",
             "options": "scruffy,plain,boring",
             "rank": 3
+        },
+        "AAQ": {
+            "caption": "Example of domain name is myapp.bubbleapps.io or myapp.com",
+            "editor": "Label",
+            "name": "domain_info",
+            "rank": 1
         }
     },
     "has_reset_fn": false,
