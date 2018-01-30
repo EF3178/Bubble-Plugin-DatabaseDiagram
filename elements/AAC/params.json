@@ -1,0 +1,78 @@
+{
+    "add_is_visible": true,
+    "category": "visual elements",
+    "default_dim": {
+        "height": 800,
+        "width": 800
+    },
+    "display": "AirDatabaseDiagram",
+    "fields": {
+        "AAG": {
+            "caption": "Appname",
+            "doc": "Name of the app",
+            "editor": "StaticText",
+            "name": "appname",
+            "rank": 0
+        },
+        "AAH": {
+            "caption": "Domain",
+            "default_val": "Bubble",
+            "doc": "Domain name for your app",
+            "editor": "Dropdown",
+            "name": "domain",
+            "options": "Bubble,Custom Domain",
+            "rank": 1
+        },
+        "AAI": {
+            "caption": "Version",
+            "default_val": "Development",
+            "doc": "The version of your app",
+            "editor": "Dropdown",
+            "name": "version",
+            "options": "Development,Live",
+            "rank": 2
+        },
+        "AAK": {
+            "caption": "Color tables",
+            "default_val": true,
+            "doc": "Check to have background color for tables",
+            "editor": "Checkbox",
+            "name": "color",
+            "rank": 4
+        },
+        "AAL": {
+            "caption": "Diagram direction",
+            "default_val": "Left to Right",
+            "editor": "Dropdown",
+            "name": "direction",
+            "options": "Left to Right,Top to Down,Right to Left",
+            "rank": 5
+        },
+        "AAM": {
+            "caption": "Scale (percentage)",
+            "default_val": 100,
+            "doc": "For scaling the diagram. Enter percentage value",
+            "editor": "StaticNumber",
+            "name": "scale",
+            "rank": 6
+        },
+        "AAP": {
+            "caption": "Look and feel",
+            "default_val": "scruffy",
+            "doc": "Look and feel of tables",
+            "editor": "Dropdown",
+            "name": "style",
+            "options": "scruffy,plain,boring",
+            "rank": 3
+        }
+    },
+    "has_reset_fn": false,
+    "icon": "ion-android-folder-open",
+    "property_applications": {
+        "Background": true,
+        "MinWidth": true,
+        "resizable": true
+    },
+    "states": {
+    }
+}
