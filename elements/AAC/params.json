@@ -76,6 +76,22 @@
             "editor": "Label",
             "name": "show_fields_info",
             "rank": 7
+        },
+        "AAX": {
+            "caption": "File format",
+            "default_val": "jpg",
+            "editor": "Dropdown",
+            "name": "fileformat",
+            "options": "png,jpg,pdf",
+            "rank": 9
+        },
+        "AAY": {
+            "caption": "Display in viewer",
+            "default_val": true,
+            "doc": "Check to show the image an image viewer",
+            "editor": "Checkbox",
+            "name": "viewer",
+            "rank": 10
         }
     },
     "has_reset_fn": false,

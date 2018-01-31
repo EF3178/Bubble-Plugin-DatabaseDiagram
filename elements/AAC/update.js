@@ -77,11 +77,21 @@ function(instance, properties, context) {
 
 
         var diagram = tbl + rel
-        var imgSrc = 'https://yuml.me/airdbdiagram/diagram/' + properties.style + ';dir:' + direction + ';scale:' + properties.scale + '/class/' + diagram
-        var imgtag = '<p style="padding-top: 2em; position: relative;"><img style="max-height: 100%; max-width: 100%" src="' + imgSrc + '" /></p>';
+        var diagram = diagram.substring(0, diagram.length - 1)
+        var imgSrc = 'https://yuml.me/airdbdiagram/diagram/' + properties.style + ';dir:' + direction + ';scale:' + properties.scale + '/class/' + diagram + '.'+properties.fileformat
+        var classid = (Math.random() * Math.pow(2, 54)).toString(18);
+        var imgtag = '<img class="'+classid+'" style="max-height: 100%; max-width: 100%" src="' + imgSrc + '" />';
+		$(el).append(imgtag)
+      	
+      	if(properties.viewer){
+          $("."+classid).css("cursor", "zoom-in");
+          $("."+classid).viewer({   
+            toolbar : false,
+            title : false
+          });
+        }
 
-        $(el).append(imgtag)
-        //instance.publishState('value',imgSrc)
+      	
 
 
     }); //end of done
