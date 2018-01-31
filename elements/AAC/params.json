@@ -6,6 +6,7 @@
         "width": 800
     },
     "display": "AirDatabaseDiagram",
+    "edit_mode_image": "//s3.amazonaws.com/appforest_uf/f1517358192429x471407021861523400/placeholder.png",
     "fields": {
         "AAG": {
             "caption": "Domain name ",
