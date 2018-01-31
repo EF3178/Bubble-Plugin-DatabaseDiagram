@@ -62,6 +62,20 @@
             "editor": "Label",
             "name": "domain_info",
             "rank": 1
+        },
+        "AAR": {
+            "caption": "Show fields",
+            "default_val": true,
+            "doc": "Uncheck to hide fields",
+            "editor": "Checkbox",
+            "name": "showfields",
+            "rank": 8
+        },
+        "AAS": {
+            "caption": "For large database with several tables, it is advisable not to show the fields by unchecking the next property. This will allow you to see only the relationships between your data.",
+            "editor": "Label",
+            "name": "show_fields_info",
+            "rank": 7
         }
     },
     "has_reset_fn": false,
@@ -70,7 +84,5 @@
         "Background": true,
         "MinWidth": true,
         "resizable": true
-    },
-    "states": {
     }
 }

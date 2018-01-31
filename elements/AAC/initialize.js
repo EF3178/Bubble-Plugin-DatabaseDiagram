@@ -1,5 +1,4 @@
 function(instance, context) {
-
   var div;
 
   var uniqueid = 'dp'+(Math.random() * Math.pow(2, 54)).toString(18);
@@ -7,6 +6,4 @@ function(instance, context) {
   instance.canvas.append(div);
 
   instance.data.uniqueid = uniqueid;
-  
-
 }
